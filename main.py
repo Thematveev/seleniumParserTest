@@ -2,7 +2,7 @@ from driver import Driver
 from telegramSender import TelegramSender
 from time import sleep
 
-TIMEOUT = 1
+TIMEOUT = 30
 TOKEN = '5265503049:AAG-ko-ifOBTIc0X8gQEIzquSBHDpe7NUEs'
 CHAT_ID = '367335715'
 ts = TelegramSender(TOKEN)
@@ -17,6 +17,7 @@ def checkUpdates():
             sent.append(order['id'])
             ts.sendMessage(CHAT_ID, str(order))
             sleep(2)
+    ts.sendMessage(CHAT_ID, 'Scan performed...')
 
 
 def main():
