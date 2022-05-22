@@ -9,6 +9,9 @@ import re
 class Driver:
 
     def __init__(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome()
         self.driver.minimize_window()
         print("Driver started!")
