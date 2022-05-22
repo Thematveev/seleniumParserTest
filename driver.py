@@ -9,7 +9,7 @@ import re
 class Driver:
 
     def __init__(self):
-        self.driver = webdriver.Edge()
+        self.driver = webdriver.Chrome()
         self.driver.minimize_window()
         print("Driver started!")
     def login(self):
